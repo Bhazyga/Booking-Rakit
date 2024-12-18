@@ -11,7 +11,7 @@ class coach extends Model
 
 
     protected $fillable = [
-        "sport",
+        "jenis",
         "description",
         "email",
         "user_id",
@@ -21,13 +21,13 @@ class coach extends Model
         "location",
         "price",
         "rating"
-                                        	
+
 
     ];
-    
+
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
     }
 
- 
+
 }

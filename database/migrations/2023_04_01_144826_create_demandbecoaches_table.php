@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('coach_id');
             $table->string('name');
-            $table->string('sport');
+            $table->string('jenis');
             $table->string('description');
             $table->string('email');
             $table->string('image');

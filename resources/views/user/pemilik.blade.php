@@ -78,7 +78,7 @@
                 <ul class="mb-0 mt-0 list-unstyled d-flex flex-row" style="color: #1B7B2C;">
 
                   <p class="card-text text-muted">
-                    {{ $item->sport }}
+                    {{ $item->jenis }}
                   </p>
               </div>
               {{-- <div class="card-footer">

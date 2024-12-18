@@ -16,7 +16,7 @@ class DemandbecoachController extends Controller
     {
         // get data where user == auth()->user()->id
         $data = demandbecoach::where('coach_id', auth()->user()->id)->get();
-        return view('user.beacoach', compact('data'));
+        return view('user.jadiPemilik', compact('data'));
     }
 
     /**
@@ -40,8 +40,8 @@ class DemandbecoachController extends Controller
         //
         // validate
         $request->validate([
-            
-            
+
+
             'description' => 'required',
         ]);
         $inputs = $request->all();

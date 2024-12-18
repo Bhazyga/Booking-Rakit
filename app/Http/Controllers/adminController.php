@@ -90,7 +90,7 @@ class adminController extends Controller
         $inputs = $request->all();
         $inputs['name'] = $data->name;
         $inputs['image'] = $data->image;
-        $inputs['sport'] = $data->sport;
+        $inputs['jenis'] = $data->jenis;
         $inputs['location'] = $data->location;
         $inputs['price'] = $data->price;
         $inputs['description'] = $data->description;
@@ -106,7 +106,7 @@ class adminController extends Controller
         $user = User::find($data->coach_id);
         $user->role = "coach";
         $user->save();
-        
+
         // send notification email to user that his request has been accepted
         $mailData = [
             "name" => "$data->name",
@@ -115,9 +115,9 @@ class adminController extends Controller
             'button' => '1',
             "body" => "you are accepted as a coach",
         ];
-    
+
         Mail::to("$data->email")->send(new TestEmail($mailData));
-    
+
         return redirect()->back()->with('success', 'Coach accepted successfully');
     }
 
@@ -134,11 +134,11 @@ class adminController extends Controller
             'button' => '1',
             "body" => "you are rejected as a coach",
         ];
-    
+
         Mail::to("$data->email")->send(new TestEmail($mailData));
         return redirect()->back()->with('delete', 'Coach rejected successfully');
     }
-    
+
     /**
      * Update the specified resource in storage.
      *

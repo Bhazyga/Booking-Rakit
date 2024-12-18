@@ -14,7 +14,7 @@ class booking extends Model
         'name',
         'email',
         'phone',
-        'sport',
+        'jenis',
         'coach_id',
         'date',
         'time',

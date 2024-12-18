@@ -51,11 +51,7 @@
               <path
                 d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z" />
             </svg></i></a>
-
-          {{-- <h1>Welcome to Your Coaching Dashboard</h1>
-
-                    <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
-        </div>
+   </div>
 
       </div>
       <!-- /#page-content-wrapper -->
@@ -135,27 +131,7 @@
 
           </table>
 
-          {{-- <div cdelass="col">
-              <div class="card h-100">
-                <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-Coach.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-                <div class="card-body">
-                  <h5 class="card-title">Nadia DARIM</h5>
-                  <p class="card-text">I am a female coach with 4 years of experience , i love Baskete-ball <3 </p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"><i class="bi bi-check-all"></i> Online</small>
-                </div>
-              </div>
-            </div> --}}
-          {{-- <div class="col">
-              <div class="card h-100">
-                <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/Coach-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
-                <div class="card-body">
-                  <h5 class="card-title">Ahmad Yassin CHAFII</h5>
-                  <p class="card-text">
-                I am a Foot-ball player & coach , i have 5 years of experience in the field of coaching.
-                  </p>
-                </div> --}}
+
 
         </div>
       </div>

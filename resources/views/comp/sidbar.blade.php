@@ -160,13 +160,13 @@
         <p class="text-white"> 👋 {{Auth::user()->name}}</p>
       </div>
       <li>
-        <a href="{{route('profile.edit')}}"><i class="bi bi-person-circle"></i> Profile</a>
+        <a href="{{route('profile.edit')}}"><i class="bi bi-person-circle"></i> Profil</a>
       </li>
       <li>
-        <a href="{{route('searchCoaches')}}"><i class="bi bi-people-fill"></i> Coaches</a>
+        <a href="{{route('searchPemilik')}}"><i class="bi bi-people-fill"></i> Hubungi Pemilik Rakit</a>
       </li>
       <li>
-        <a href="{{route('searchCourses')}}"><i class="bi bi-play-circle-fill"></i> Courses</a>
+        <a href="{{route('searchLomba')}}"><i class="bi bi-play-circle-fill"></i> Event Lomba</a>
       </li>
       {{-- <li>
                 <a href="{{route('user.articles')}}"><i class="bi bi-body-text"></i> Articles</a>
@@ -175,7 +175,7 @@
               <a href="{{route('user.music')}}"><i class="bi bi-music-note-beamed"></i> Music</a>
       </li> --}}
       <li>
-        <a href="{{route('applycoachingindex')}}"><i class="bi bi-cash"></i> Be a coach</a>
+        <a href="{{route('jadiPemilik')}}"><i class="bi bi-cash"></i> Jadi Pemilik</a>
       </li>
       {{-- <li>
                 <a href="#"><i class="bi bi-chat-left-dots-fill"></i> Chat</a>

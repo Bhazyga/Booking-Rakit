@@ -34,7 +34,7 @@
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'you have already apply for coaching',
+      text: 'Anda Sudah menjadi pemiik',
     })
   </script>
   @endif
@@ -49,8 +49,8 @@
     // image in the sweet alert
     Swal.fire({
       icon: 'success',
-      title: 'Good job!',
-      text: 'you have apply for coaching',
+      title: 'Kerja Bagus!',
+      text: 'Tunggu Konfirmasi Admin',
     })
   </script>
   @endif
@@ -85,8 +85,8 @@
         {{-- --}}
         @if (count($data) > 0)
         <div class="col-md-12">
-          <h1 class="text-success">Your Coaching Application</h1>
-          <p class="text-dark">You have already applied for coaching. We will contact you soon.</p>
+          <h1 class="text-success">Aplikasi pemilik rakit</h1>
+          <p class="text-dark">Anda telah mendaftar menjadi pemilik. Tunggu konfirmasi admin.</p>
         </div>
         <div class="imageGif">
           <img
@@ -101,15 +101,13 @@
             <div class="container ">
               <div class="row align-items-center">
                 <div class="col-md-6">
-                  <img src="../images/—Pngtree—fitness coach_488811.png" alt="" class="img-fluid ">
+                  <img src="../images/PemilikRakit2.png" alt="" class="img-fluid ">
                 </div>
                 <div class="col-md-6 ">
-                  <h2 class="text-success ">Do you wanna be Coach ? </h2>
-                  <p class="text-dark">Being a coach in sports is a fulfilling and rewarding profession that involves
-                    working with athletes to help them achieve their full potential. As a coach, you play a critical
-                    role in the development of your athletes, both on and off the field. </p>
+                  <h2 class="text-success ">Ingin Menjadi Pemilik ? </h2>
+                  <p class="text-dark">Menjadi pemilik dan menyewakan rakit melalui aplikasi yang kami sediakan</p>
                   <button data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    class="btn btn-success w-75  mt-3 shadow rounded-3">Apply now !</button>
+                    class="btn btn-success w-75  mt-3 shadow rounded-3">Segera daftarkan !</button>
 
                 </div>
               </div>
@@ -119,28 +117,6 @@
           </div>
 
         </div>
-        {{-- <div class="col">
-          <div class="card h-100">
-            <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-Coach.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-            <div class="card-body">
-              <h5 class="card-title">Nadia DARIM</h5>
-              <p class="card-text">I am a female coach with 4 years of experience , i love Baskete-ball <3 </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"><i class="bi bi-check-all"></i> Online</small>
-            </div>
-          </div>
-        </div> --}}
-        {{-- <div class="col">
-          <div class="card h-100">
-            <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/Coach-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
-            <div class="card-body">
-              <h5 class="card-title">Ahmad Yassin CHAFII</h5>
-              <p class="card-text">
-            I am a Foot-ball player & coach , i have 5 years of experience in the field of coaching.
-              </p>
-            </div> --}}
-
       </div>
     </div>
   </div>
@@ -165,52 +141,42 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-clipboard-fill"></i> Apply for coach !
+          <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-clipboard-fill"></i> Daftar menjadi pemilik !
           </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="{{route('applycoaching')}}" method="post">
+          <form action="{{route('jadiPemilik')}}" method="post">
             @csrf
             <label for="sport">
-              <h5 class="text-success">Sport :</h5>
-              <input type="text" name="sport" class="form-control" id="sport" placeholder="Sport">
+              <h5 class="text-success">Jenis :</h5>
+              <input type="text" name="jenis" class="form-control" id="sport" placeholder="Jenis Rakit">
             </label>
             {{-- years of experience --}}
             <label for="experience">
-              <h5 class="text-success">Years of experience :</h5>
+              <h5 class="text-success">Pengalaman :</h5>
               <input type="number" class="form-control" name="yearsofexperience" id="experience"
-                placeholder="Years of experience">
+                placeholder="Berapa Tahun Pengalaman?">
             </label>
             {{-- localitaion --}}
             <label for="location">
-              <h5 class="text-success">Location :</h5>
+              <h5 class="text-success">Lokasi :</h5>
               <select class="form-select" aria-label="Default select example" name="location">
-                <option selected>Open this select menu</option>
+                <option selected>Pilih Lokasi</option>
                 {{-- morocco citys as options value is the name of city --}}
-                <option value="Casablanca">Casablanca</option>
-                <option value="Rabat">Rabat</option>
-                <option value="Marrakech">Marrakech</option>
-                <option value="Fes">Fes</option>
-                <option value="Tangier">Tangier</option>
-                <option value="Agadir">Agadir</option>
-                <option value="Meknes">Meknes</option>
-                <option value="Oujda">Oujda</option>
-                <option value="Kenitra">Kenitra</option>
-                <option value="Tetouan">Tetouan</option>
-                <option value="Safi">Safi</option>
-
+                <option value="Jakarta">Jakarta</option>
+                <option value="Bekasi">Bekasi</option>
               </select>
             </label>
             {{-- price par hour --}}
             <label for="price">
-              <h5 class="text-success">Price per hour :</h5>
-              <input type="number" class="form-control" id="price" name="price" placeholder="Price per hour">
+              <h5 class="text-success">Harga Per Jam :</h5>
+              <input type="number" class="form-control" id="price" name="price" placeholder="Rupiah">
             </label>
             <label for="motivation">
-              <h5 class="text-success">Description :</h5>
+              <h5 class="text-success">Deskripsi :</h5>
               <textarea class="form-control" name="description"
-                placeholder="make sure to write a good description about you it will be shown to clients"
+                placeholder="Tulis Disini"
                 id="exampleFormControlTextarea1" rows="8" cols="50"></textarea>
             </label>
 

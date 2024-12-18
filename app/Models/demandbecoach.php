@@ -10,8 +10,8 @@ class demandbecoach extends Model
     use HasFactory;
 
     protected $fillable = [
-        
-        "sport",
+
+        "jenis",
         "name",
         "email",
         "description",
@@ -21,7 +21,7 @@ class demandbecoach extends Model
         "yearsofexperience",
         "coach_id",
         "status",
-                                      	
+
 
     ];
 
@@ -29,5 +29,5 @@ class demandbecoach extends Model
         return $this->belongsTo(User::class, 'coach_id');
     }
 
-   
+
 }

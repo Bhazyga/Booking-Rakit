@@ -71,7 +71,7 @@
                                 <div class="row align-items-center no-gutters">
                                     <div class="col me-2">
                                         <div class="text-uppercase text-success fw-bold text-xs mb-1"><span><i
-                                                    class="bi bi-calendar-check-fill"></i> Accepted</span></div>
+                                                    class="bi bi-calendar-check-fill"></i> Diterima</span></div>
                                         <div class="text-dark fw-bold h5 mb-0"><span>{{count($accepted)}}</span></div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
@@ -85,7 +85,7 @@
                                 <div class="row align-items-center no-gutters">
                                     <div class="col me-2">
                                         <div class="text-uppercase text-danger fw-bold text-xs mb-1"><span><i
-                                                    class="bi bi-x-circle-fill"></i> Rejected</span></div>
+                                                    class="bi bi-x-circle-fill"></i> Ditolak</span></div>
                                         <div class="row g-0 align-items-center">
                                             <div class="col-auto">
                                                 <div class="text-dark fw-bold h5 mb-0"><span>{{count($rejected)}}</span>
@@ -106,7 +106,7 @@
                                 <div class="row align-items-center no-gutters">
                                     <div class="col me-2">
                                         <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span><i
-                                                    class="bi bi-bookmark-fill"></i> All Books</span></div>
+                                                    class="bi bi-bookmark-fill"></i> Total Booking</span></div>
                                         <div class="text-dark fw-bold h5 mb-0"><span>{{count($bookings)}}</span></div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
@@ -119,10 +119,10 @@
                     <table class="table align-middle mb-0 bg-white">
                         <thead class="bg-light">
                             <tr>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Actions</th>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -156,14 +156,14 @@
 
 
                 <table class="table align-middle mb-0 bg-white">
-                    <h2>Accepted Bookings</h2>
+                    <h2>Booking Yang Di terima</h2>
                     <thead class="bg-light">
                         <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Time</th>
+                            <th>Nama</th>
+                            <th>Tanggal</th>
+                            <th>Waktu</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -173,12 +173,14 @@
                                 <td>{{ $booking->date }}</td>
                                 <td>{{ $booking->time }}</td>
                                 <td>{{ $booking->status }}</td>
+                                <td>
                                 <a href="{{route('reject', $booking->id)}}" class="btn btn-danger btn-sm">
                                     <i class="bi bi-x-circle-fill"></i> Reject
                                 </a>
                                 <a href="{{route('accept', $booking->id)}}" class="btn btn-success btn-sm me-2">
                                     <i class="bi bi-calendar-check-fill"></i> Accept
                                 </a>
+                            </td>
                             </tr>
                         @endforeach
                     </tbody>

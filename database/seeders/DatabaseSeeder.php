@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 2,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
             'image' => 'vectimg.png',
-            'sport' => 'football',
+            'jenis' => 'rakitkayu',
             'price' => 100,
             'location' => 'Casablanca',
             'status' => 'available',

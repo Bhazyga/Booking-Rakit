@@ -160,14 +160,14 @@
         <p class="text-white"> 👋 {{Auth::user()->name}}</p>
       </div>
       <li>
-        <a href="{{route('edittheprofile')}}"><i class="bi bi-person-circle"></i> Profile</a>
+        <a href="{{route('edittheprofile')}}"><i class="bi bi-person-circle"></i> Profil</a>
       </li>
 
       <li>
-        <a href="{{route('dashboard.coach')}}"><i class="bi bi-calendar-check"></i> Accept Booking</a>
+        <a href="{{route('dashboard.coach')}}"><i class="bi bi-calendar-check"></i> Terima Booking</a>
       </li>
       <li>
-        <a href="{{route('mycourses')}}"><i class="bi bi-pencil-square"></i> Your Course</a>
+        <a href="{{route('mycourses')}}"><i class="bi bi-pencil-square"></i> Buat Lomba</a>
       </li>
       {{-- <li>
                   <a href="{{route('user.articles')}}"><i class="bi bi-body-text"></i> Articles</a>

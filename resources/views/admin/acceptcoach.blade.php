@@ -69,7 +69,7 @@
             <thead class="bg-light">
               <tr>
                 <th>Name</th>
-                <th>Sport</th>
+                <th>Jenis</th>
                 <th>Description</th>
                 <th>Actions</th>
               </tr>
@@ -88,7 +88,7 @@
                   </div>
                 </td>
                 <td>
-                  <p class="fw-normal mb-1">{{$item->sport}}</p>
+                  <p class="fw-normal mb-1">{{$item->jenis}}</p>
                   <p class="text-muted mb-0">{{$item->yearsofexperience}} Years</p>
                 </td>
                 <td>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ISPORT - Coaches</title>
+  <title>Profil Pemilik</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
   {{-- sweet alert --}}
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    swal("Good job!", "You clicked the button!", "success");
+    swal("Selamat!", "Data Berhasil Diubah!", "success");
   </script>
   @endif
 
@@ -51,13 +51,13 @@
 
           <div class="p-3 py-5">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h4 class="text-right">Profile Settings</h4>
+              <h4 class="text-right">Edit Profil</h4>
             </div>
             <form method="post" action="{{route('updatecoach')}}" enctype="multipart/form-data">
               @csrf
               @method('post')
               <div class="row mt-2">
-                <div class="col-md-12 mb-1"><label class="labels">Full name</label><input value="{{$data->name}}"
+                <div class="col-md-12 mb-1"><label class="labels">Nama</label><input value="{{$data->name}}"
                     type="text" name="name" class="form-control" placeholder="Enter your name"></div>
               </div>
               <div class="row mt-3">
@@ -66,30 +66,29 @@
 
               </div>
               <div class="row mt-3">
-                <div class="col-md-12"><label class="labels">price </label><input type="number" value="{{$data->price}}"
+                <div class="col-md-12"><label class="labels">Harga </label><input type="number" value="{{$data->price}}"
                     name="price" class="form-control" placeholder="400dh"></div>
 
               </div>
               <div class="row mt-3">
-                <div class="col-md-12 mb-1"><label class="labels">Years of experience</label><input
+                <div class="col-md-12 mb-1"><label class="labels">Pengalaman</label><input
                     value="{{$data->yearsofexperience}}" name="yearsofexperience" type="number" class="form-control"
                     placeholder="4 years "></div>
               </div>
               <div class="row mt-3">
 
-                <div class="col-md-12"><label class="labels">Address Line </label><input type="text"
+                <div class="col-md-12"><label class="labels">Alamat </label><input type="text"
                     value="{{$data->location}}" name="location" class="form-control" placeholder="enter address line 1">
                 </div>
               </div>
 
               <div class="row mt-3">
-                <div class="col-md-12"><label class="labels">Description </label><textarea name="description"
+                <div class="col-md-12"><label class="labels">Deskripsi </label><textarea name="description"
                     class="form-control" id="" cols="30" rows="10">{{$data->description}}</textarea></div>
 
               </div>
 
-              <div class="mt-4 "><button class="btn btn-outline-success profile-button" type="submite">Save
-                  Profile</button></div>
+              <div class="mt-4 "><button class="btn btn-outline-success profile-button" type="submite">Simpan</button></div>
           </div>
           </form>
           {{-- change pw --}}
@@ -104,23 +103,22 @@
                     @csrf
                     <div class="p-3 py-5">
                       <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Change Password</h4>
+                        <h4 class="text-right">Ubah Password</h4>
                       </div>
                       <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Old password</label><input name="oldpassword"
+                        <div class="col-md-6"><label class="labels">Password Lama</label><input name="oldpassword"
                             type="password" class="form-control" placeholder="********" value=""></div>
                       </div>
                       <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">New password</label><input name="newpassword"
+                        <div class="col-md-6"><label class="labels">Password Baru</label><input name="newpassword"
                             type="password" class="form-control" placeholder="********" value=""></div>
                       </div>
                       <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Repeat password</label><input name="repeatpassword"
+                        <div class="col-md-6"><label class="labels">Ulangi Password</label><input name="repeatpassword"
                             type="password" class="form-control" placeholder="*********" value=""></div>
                       </div>
 
-                      <div class="mt-5 "><button class="btn btn-outline-success profile-button" type="submite">Save
-                          Profile</button></div>
+                      <div class="mt-5 "><button class="btn btn-outline-success profile-button" type="submite">Simpan</button></div>
                     </div>
                   </form>
                   {{-- delete acc --}}
@@ -130,7 +128,7 @@
                       @method('DELETE')
                       @csrf
                       <div class=""><button class="btn btn-danger profile-button w-100" type="button"
-                          onclick="alerting()">DELETE ACCOUNT</button></div>
+                          onclick="alerting()">Hapus Akun</button></div>
                     </form>
                     {{-- <form id="deleteacc" action="{{route('profile.destroy')}}" method="delete">
                     @method('delete')
@@ -149,12 +147,12 @@
                           buttonsStyling: false
                         })
                         swalWithBootstrapButtons.fire({
-                          title: 'Are you sure?',
-                          text: "You won't be able to revert this!",
+                          title: 'Anda Yakin?',
+                          text: "Tindakan Ini Tidak Bisa Di Ulang!",
                           icon: 'warning',
                           showCancelButton: true,
-                          confirmButtonText: 'Yes, delete it!',
-                          cancelButtonText: 'No, cancel!',
+                          confirmButtonText: 'Ya, Hapus!',
+                          cancelButtonText: 'Batalkan!',
                           reverseButtons: true
                         }).then((result) => {
                           if (result.isConfirmed) {
@@ -165,7 +163,7 @@
                           ) {
                             swalWithBootstrapButtons.fire(
                               'Cancelled',
-                              'Your imaginary file is safe :)',
+                              'Sukses Tersimpan :)',
                               'error'
                             )
                           }

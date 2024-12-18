@@ -96,7 +96,7 @@
               <div class="card-body">
                 <h5 class="card-title mb-4 mt-3">{{$data->name}}</h5>
                 <p class="card-text">{{$data->description}}</p>
-                <p class="card-text"><small class="text-muted"></small>{{$data->price}} DH / PAR 1H</p>
+                <p class="card-text"><small class="text-muted"></small>{{$data->price}} Rupiah / 1 Jam</p>
               </div>
             </div>
           </div>

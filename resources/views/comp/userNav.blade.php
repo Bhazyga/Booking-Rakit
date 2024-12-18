@@ -13,10 +13,10 @@
           <a class="nav-link active text-white" aria-current="page" href="{{route('dashboard')}}">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{route('searchCoaches')}}">Coaches</a>
+          <a class="nav-link text-white" href="{{route('searchPemilik')}}">Hubungi Pemilik Rakit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{route('searchCourses')}}">Courses</a>
+          <a class="nav-link text-white" href="{{route('searchLomba')}}">Event Lomba</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="404">Support</a>

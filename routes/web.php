@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes 
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 */
 
 
-// ga3 satat bnat nass 
+// ga3 satat bnat nass
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,22 +68,22 @@ Route::middleware(['auth'])->group(function () {
 Route::delete('/profile', [userInfo::class, 'destroy'])->name('profile.destroy');
 // user routes
 Route::middleware(['isUser'])->group(function () {
-Route::get('/quiz', function() { return view('user.quiz');})->name('quiz'); 
-Route::post('/quizend', [userInfo::class, 'quizend'])->name('quizzdone');  
+Route::get('/quiz', function() { return view('user.quiz');})->name('quiz');
+Route::post('/quizend', [userInfo::class, 'quizend'])->name('quizzdone');
 // Route::get('/dashboard',[userInfo::class, 'Dashboarding'])->name('dashboard');
 Route::get('/dashboard/profile', function() { return view('user.profile'); })->name('user.profile');
 Route::get('/dashboard', [userInfo::class , 'index'])->name('dashboard');
-Route::get('/dashboard/courses', [CourseController::class , 'index'])->name('searchCourses');
+Route::get('/dashboard/lomba', [CourseController::class , 'index'])->name('searchLomba');
 Route::get('/profile', [userInfo::class, 'edit'])->name('profile.edit');
 Route::patch('/profile', [userInfo::class, 'update'])->name('profile.update');
 Route::get('/dashboard/course', [CourseController::class, 'search'])->name('user.searchcourse');
-Route::get('/dashboard/coaches',[CoachController::class, 'index'])->name('searchCoaches');
+Route::get('/dashboard/pemilik',[CoachController::class, 'index'])->name('searchPemilik');
 Route::get('/dashboard/coach/{id}',[CoachController::class, 'show'])->name('showacoach');
 Route::post('/dashboard/coach/book',[CoachController::class, 'store'])->name('booking');
 Route::post('/dashboard/coach/search',[CoachController::class, 'search'])->name('searchingfoacoach');
 Route::get('/dashboard/course/{id}',[CourseController::class, 'show'])->name('viewCourse');
-Route::post('/dashboard/applycoaching',[DemandbecoachController::class, 'store'])->name('applycoaching');
-Route::get('/dashboard/applycoaching',[DemandbecoachController::class, 'index'])->name('applycoachingindex');
+Route::post('/dashboard/jadiPemilik',[DemandbecoachController::class, 'store'])->name('jadiPemilik');
+Route::get('/dashboard/jadiPemilik',[DemandbecoachController::class, 'index'])->name('jadiPemilikindex');
 Route::post('/dashboard/addcpmment', [CommentController::class ,'store'])->name('addcomment');
 Route::post('/dashboard/deletecomment/}', [CommentController::class ,'deleteComment'])->name('deletecomment');
 });
@@ -97,7 +97,7 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::get('/admin/coaches/{id}',[adminController::class, 'destroy'])->name('deletecoach');
     Route::get('/admin/courses',[adminController::class, 'showCourses'])->name('showCourses');
     Route::get('/admin/course/{id}',[adminController::class, 'deleteCourse'])->name('deleteCourse');
-   
+
 });
 
 
@@ -115,9 +115,9 @@ Route::middleware(['isCoach'])->group(function () {
     Route::post('/coach/editprofile',[coachController::class, 'updatecoach'])->name('updatecoach');
     // update route
     Route::post('/coach/mycourses/update',[coachController::class, 'updatecourse'])->name('updatecourse');
-    
-    
-   
+
+
+
 });
 // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // route::get('show/{id}', [FoodController::class, 'showw'])->name('showw');

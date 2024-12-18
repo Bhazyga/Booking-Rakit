@@ -52,10 +52,7 @@
                 d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z" />
             </svg></i></a>
 
-          {{-- <h1>Welcome to Your Coaching Dashboard</h1>
-
-                    <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
-        </div>
+   </div>
 
       </div>
       <!-- /#page-content-wrapper -->
@@ -95,7 +92,7 @@
                   </div>
                 </td>
                 <td>
-                  <p class="fw-normal mb-1">{{$item->sport}}</p>
+                  <p class="fw-normal mb-1">{{$item->jenis}}</p>
                   <p class="text-muted mb-0">{{$item->yearsofexperience}} Years</p>
                 </td>
                 <td>

@@ -68,10 +68,7 @@
 
           <h1>Selamat Datang Di Booking Rakit</h1>
 
-          <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or
-            online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick
-            links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and
-            we look forward to seeing your progress!</p>
+          <p>Bagi user yang baru mendaftar anda bisa booking rakit atau cek event lomba kami...</p>
 
         </div>
 
@@ -80,7 +77,7 @@
       <div class="row mb-4">
         {{-- h1 in green top coaches --}}
         <div class="col-12">
-          <h1 class="text-dark">Top Coaches <i class="bi bi-chat-square-heart"></i></i></h1>
+          <h1 class="text-dark">Pemilik Rakit <i class="bi bi-chat-square-heart"></i></i></h1>
           <div class="mt-4">
             <div class="row row-cols-1 row-cols-md-3 g-4">
               @foreach ($coaches as $item)
@@ -95,7 +92,7 @@
                   </div>
                   <div class="card-footer d-flex">
 
-                    <small class="text-muted">{{$item->price}} DH</small>
+                    <small class="text-muted">{{$item->price}} Rupiah</small>
                     <a href="/dashboard/coach/{{$item->id}}" class="btn btn-success btn-sm ms-auto"><i
                         class="bi bi-calendar2-check"></i> Book Now</a>
 
