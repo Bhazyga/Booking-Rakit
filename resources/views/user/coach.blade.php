@@ -18,10 +18,10 @@
 
   @include('comp.userNav')
   @include('comp.sidbar')
-  @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
+  {{-- @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
   <script>
     window.location = "/dashboard";
-  </script>
+  </script> --}}
 
   @endif
 
@@ -109,7 +109,7 @@
         @csrf
 
         <div class="form-group">
-          <input type="hidden" name="coach_id" id="name" class="form-control" value="{{$data->id}}" required>
+          <input type="hidden" name="pemilik_id" id="name" class="form-control" value="{{$data->id}}" required>
 
         </div>
         <div class="form-group">
@@ -220,7 +220,7 @@
         right: -6px;
       }
     </style>
-    <a target="_blank" href="https://api.whatsapp.com/send?phone={{$coachuser->phone}}">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone={{$pemilikuser->phone}}">
       <div class="feedback-btn">
         <p class="feedback-txt mt-3">CONTACT </p>
       </div>

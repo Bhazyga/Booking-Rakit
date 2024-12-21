@@ -25,8 +25,8 @@ class isAdmin
             if (auth()->user()->role == 'user') {
                 return redirect('dashboard')->with('error', 'You have not admin access');
             }
-            else if (auth()->user()->role == 'coach') {
-                return redirect('coach');
+            else if (auth()->user()->role == 'pemilik') {
+                return redirect('pemilik');
             }
         }
 

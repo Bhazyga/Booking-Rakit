@@ -13,19 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coaches', function (Blueprint $table) {
+        Schema::create('demandbepemiliks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('pemilik_id');
             $table->string('name');
-            $table->string('description');
-            $table->string('image');
             $table->string('jenis');
+            $table->string('description');
+            $table->string('email');
+            $table->string('image');
             $table->string('location');
             $table->string('price');
-            $table->string('rating');
             $table->string('yearsofexperience');
             $table->string('status')->default('pending');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('pemilik_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coaches');
+        Schema::dropIfExists('demandbepemiliks');
     }
 };

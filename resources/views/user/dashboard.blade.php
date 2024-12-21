@@ -15,12 +15,7 @@
 </head>
 
 <body style="background-color: #efefef;">
-  @if (Auth::user()->quizstatus == '0' )
 
-  <script>
-    window.location = "/quiz";
-  </script>
-  @else
   @if (Auth::user()->gender == '' )
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -37,7 +32,6 @@
 
   @endif
 
-  @endif
 
   @include('comp.userNav')
   @include('comp.sidbar')
@@ -45,13 +39,6 @@
   @if(session('status'))
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script>
-    Swal.fire(
-      'Good job!',
-      'Your quiz has been submitted successfully !',
-      'success'
-    )
-  </script>
 
   @endif
 
@@ -80,7 +67,7 @@
           <h1 class="text-dark">Pemilik Rakit <i class="bi bi-chat-square-heart"></i></i></h1>
           <div class="mt-4">
             <div class="row row-cols-1 row-cols-md-3 g-4">
-              @foreach ($coaches as $item)
+              @foreach ($pemiliks as $item)
               <div class="col">
                 <div class="card h-100">
                   <img src="images/{{$item->image}}" class="card-img-top" alt="Skyscrapers" />

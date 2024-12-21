@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\coach;
 use App\Models\User;
 use App\Models\Course;
+use App\Models\pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,15 +20,15 @@ class userInfo extends Controller
     public function index(Request $request)
     {
         $user = User::find(Auth::user()->id);
-        // all coaches but only last 3
-        $coaches = coach::all()->take(3);
+        // all pemiliks but only last 3
+        $pemiliks = pemilik::all()->take(3);
         // all courses but only last 3
         $courses = Course::all()->take(3);
         // return
-        return view('user.dashboard', compact('user', 'coaches', 'courses'));
-        
-      
-        
+        return view('user.dashboard', compact('user', 'pemiliks', 'courses'));
+
+
+
     }
 
     /**
@@ -85,24 +85,24 @@ class userInfo extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function quizend(Request $request){
-        // change user quizstatus to 1
-        $user = User::find(Auth::user()->id);
-        $user->quizstatus = 1;
-        $user->bmi = $request->bmi;
-        $user->save();
-        // redirect to dashboard
-        return redirect()->route('dashboard')->with('status', 'Your quiz has been submitted successfully !');
-     }
+    //  public function quizend(Request $request){
+    //     // change user quizstatus to 1
+    //     $user = User::find(Auth::user()->id);
+    //     $user->quizstatus = 1;
+    //     $user->bmi = $request->bmi;
+    //     $user->save();
+    //     // redirect to dashboard
+    //     return redirect()->route('dashboard')->with('status', 'Your quiz has been submitted successfully !');
+    //  }
     public function update(Request $request)
     {
-        // edit user info 
+        // edit user info
         // User::update($request->all());
         // validate
         $request->validate([
             'name' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-     
+
         ]);
         $User = User::find(Auth::user()->id);
         $input = $request->all();
@@ -114,7 +114,7 @@ class userInfo extends Controller
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
- 
+
             //hey
         }
 
@@ -123,7 +123,7 @@ class userInfo extends Controller
         $User->update($input);
         return redirect()->back()->with('status', 'your profile has been updated successfully !');
 
-        
+
     }
     public function changepassword(Request $request)
     {
@@ -136,7 +136,7 @@ class userInfo extends Controller
 
         if ((Hash::check($request->oldpassword, Auth::user()->password))) {
             // The passwords matches
-            
+
               if($request->newpassword == $request->repeatpassword){
                 $User->password = bcrypt($request->newpassword);
                 $User->save();
@@ -147,9 +147,9 @@ class userInfo extends Controller
             // return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
         }else{
              return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
-            
+
         }
-        
+
     }
 
     /**

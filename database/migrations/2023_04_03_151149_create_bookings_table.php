@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('jenis');
-            $table->unsignedBigInteger('coach_id');
+            $table->unsignedBigInteger('pemilik_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');
+            $table->foreign('pemilik_id')->references('id')->on('pemiliks')->onDelete('cascade');
             $table->string('date');
             $table->string('time');
             $table->string('status')->default('pending');

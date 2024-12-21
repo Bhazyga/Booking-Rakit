@@ -23,7 +23,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have accepted the coach',
+      text: 'you have accepted the pemilik',
     })
   </script>
   @endif
@@ -34,7 +34,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have deleted the coach',
+      text: 'you have deleted the pemilik',
     })
   </script>
 
@@ -66,7 +66,7 @@
 
         </div>
         {{-- h1
-        {{-- h1 in green top coaches --}}
+        {{-- h1 in green top pemilikes --}}
         {{-- --}}
         <div class="mt-4">
           <table class="table align-middle mb-0 bg-white">
@@ -132,7 +132,7 @@
 
                 <td>
 
-                  <a href="{{route('deletecoach',$item->user_id)}}" class="btn btn-sm btn-sm btn-danger"><i
+                  <a href="{{route('deletepemilik',$item->user_id)}}" class="btn btn-sm btn-sm btn-danger"><i
                       class="bi bi-trash3-fill"></i> DELETE</a>
 
                 </td>
@@ -152,10 +152,10 @@
 
           {{-- <div class="col">
               <div class="card h-100">
-                <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-Coach.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+                <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-pemilik.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
                 <div class="card-body">
                   <h5 class="card-title">Nadia DARIM</h5>
-                  <p class="card-text">I am a female coach with 4 years of experience , i love Baskete-ball <3 </p>
+                  <p class="card-text">I am a female pemilik with 4 years of experience , i love Baskete-ball <3 </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted"><i class="bi bi-check-all"></i> Online</small>
@@ -164,11 +164,11 @@
             </div> --}}
           {{-- <div class="col">
               <div class="card h-100">
-                <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/Coach-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
+                <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/pemilik-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
                 <div class="card-body">
                   <h5 class="card-title">Ahmad Yassin CHAFII</h5>
                   <p class="card-text">
-                I am a Foot-ball player & coach , i have 5 years of experience in the field of coaching.
+                I am a Foot-ball player & pemilik , i have 5 years of experience in the field of pemiliking.
                   </p>
                 </div> --}}
 

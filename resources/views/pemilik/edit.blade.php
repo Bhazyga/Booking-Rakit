@@ -53,7 +53,7 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h4 class="text-right">Edit Profil</h4>
             </div>
-            <form method="post" action="{{route('updatecoach')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('updatepemilik')}}" enctype="multipart/form-data">
               @csrf
               @method('post')
               <div class="row mt-2">

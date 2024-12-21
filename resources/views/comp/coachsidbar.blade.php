@@ -164,7 +164,7 @@
       </li>
 
       <li>
-        <a href="{{route('dashboard.coach')}}"><i class="bi bi-calendar-check"></i> Terima Booking</a>
+        <a href="{{route('dashboard.pemilik')}}"><i class="bi bi-calendar-check"></i> Terima Booking</a>
       </li>
       <li>
         <a href="{{route('mycourses')}}"><i class="bi bi-pencil-square"></i> Buat Lomba</a>

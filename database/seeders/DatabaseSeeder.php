@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\coach;
+use App\Models\pemilik;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,17 +24,17 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminzz'),
         ]);
 
-        // making coach users
+        // making pemilik users
         \App\Models\User::factory()->create([
-            'name' => 'COACH',
-            'email' => 'coach@coach.com',
-            'role' => 'coach',
-            'password' => bcrypt('coach'),
+            'name' => 'pemilik',
+            'email' => 'pemilik@pemilik.com',
+            'role' => 'pemilik',
+            'password' => bcrypt('pemilik'),
         ]);
-        // filling the coach table
+        // filling the pemilik table
 
-        coach::factory()->create([
-            'name' => 'Zakaria El Azzouzi',
+        pemilik::factory()->create([
+            'name' => 'Abdul Xiboba',
             'user_id' => 2,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
             'image' => 'vectimg.png',

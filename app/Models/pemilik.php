@@ -5,28 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class demandbecoach extends Model
+class pemilik extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
 
+    protected $fillable = [
         "jenis",
-        "name",
-        "email",
         "description",
+        "email",
+        "user_id",
+        "name",
+        "yearsofexperience",
         "image",
         "location",
         "price",
-        "yearsofexperience",
-        "coach_id",
-        "status",
+        "rating"
 
 
     ];
 
     public function user(){
-        return $this->belongsTo(User::class, 'coach_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 

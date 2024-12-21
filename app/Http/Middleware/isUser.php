@@ -25,8 +25,8 @@ class isUser
             if (auth()->user()->role == 'admin') {
                 return redirect('admin')->with('error', 'You have not user access');
             }
-            else if (auth()->user()->role == 'coach') {
-                return redirect('coach');
+            else if (auth()->user()->role == 'pemilik') {
+                return redirect('pemilik');
             }
         }
     }

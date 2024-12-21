@@ -154,10 +154,10 @@
         <p class="text-white"> 👋 {{Auth::user()->name}}</p>
       </div>
       <li>
-        <a href="{{route('acceptcoachh')}}"><i class="bi bi-person-check"></i> Terima Pemilik</a>
+        <a href="{{route('acceptpemilikh')}}"><i class="bi bi-person-check"></i> Terima Pemilik</a>
       </li>
       <li>
-        <a href="{{route('showcoach')}}"><i class="bi bi-trash3-fill"></i> Hapus Pemilik</a>
+        <a href="{{route('showpemilik')}}"><i class="bi bi-trash3-fill"></i> Hapus Pemilik</a>
       </li>
       <li>
         <a href="{{route('showCourses')}}"><i class="bi bi-vector-pen"></i> Hapus Perlombaan </a>

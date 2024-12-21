@@ -23,7 +23,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have accepted the coach',
+      text: 'you have accepted the pemilik',
     })
   </script>
   @endif
@@ -34,7 +34,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have deleted the coach',
+      text: 'you have deleted the pemilik',
     })
   </script>
 
@@ -52,9 +52,9 @@
                 d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z" />
             </svg></i></a>
 
-          {{-- <h1>Welcome to Your Coaching Dashboard</h1>
+          {{-- <h1>Welcome to Your pemiliking Dashboard</h1>
 
-                    <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
+                    <p>From here, you can manage your pemiliking schedule, review your progress, and book new pemiliking sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
         </div>
 
       </div>
@@ -62,7 +62,7 @@
       <div class="row mb-4">
 
         {{-- h1
-        {{-- h1 in green top coaches --}}
+        {{-- h1 in green top pemilikes --}}
         {{-- --}}
         <div class="mt-4">
           <table class="table align-middle mb-0 bg-white">
@@ -127,14 +127,14 @@
                 </td>
 
                 <td>
-                  <form action="{{route('acceptcoach')}}" method="post">
+                  <form action="{{route('acceptpemilik')}}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{$item->id}}">
                     <button type="submit" class="btn  btn-sm btn-success ">
                       <i class="bi bi-check-square"></i> Accept
                     </button>
                   </form>
-                  <form action="{{route('rejectcoach')}}" method="post">
+                  <form action="{{route('rejectpemilik')}}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{$item->id}}">
                     <button type="submit" class="btn  btn-sm btn-danger ">
@@ -149,10 +149,10 @@
 
           {{-- <div class="col">
               <div class="card h-100">
-                <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-Coach.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+                <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-pemilik.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
                 <div class="card-body">
                   <h5 class="card-title">Nadia DARIM</h5>
-                  <p class="card-text">I am a female coach with 4 years of experience , i love Baskete-ball <3 </p>
+                  <p class="card-text">I am a female pemilik with 4 years of experience , i love Baskete-ball <3 </p>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted"><i class="bi bi-check-all"></i> Online</small>
@@ -161,11 +161,11 @@
             </div> --}}
           {{-- <div class="col">
               <div class="card h-100">
-                <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/Coach-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
+                <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/pemilik-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
                 <div class="card-body">
                   <h5 class="card-title">Ahmad Yassin CHAFII</h5>
                   <p class="card-text">
-                I am a Foot-ball player & coach , i have 5 years of experience in the field of coaching.
+                I am a Foot-ball player & pemilik , i have 5 years of experience in the field of pemiliking.
                   </p>
                 </div> --}}
 

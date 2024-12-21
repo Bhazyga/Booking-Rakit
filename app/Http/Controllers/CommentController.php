@@ -35,14 +35,14 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        //
         $request->validate([
             'comment' => 'required',
         ]);
         // limit  5 comments on 1 day
         $count = comment::where('user_id', auth()->user()->id)->where('course_id', $request->course_id)->whereDate('created_at', date('Y-m-d'))->count();
         if($count >= 5){
-            return back()->with('error', 'You can not comment more than 5 times a day');
+            return back()->with('error', 'Tidak dapat komen lebih dari 5 kali per hari');
         }
 
         $comment = new comment();
@@ -60,8 +60,8 @@ class CommentController extends Controller
         $comment->delete();
         return back();
     }
-       
-    
+
+
 
     /**
      * Display the specified resource.

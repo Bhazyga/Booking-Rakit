@@ -18,7 +18,7 @@
 
   @include('comp.userNav')
   @include('comp.sidbar')
-  @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
+  @if (Auth::user()->gender == '')
   <script>
     window.location = "/dashboard";
   </script>
@@ -46,7 +46,7 @@
       <div class="row mb-4">
 
         <div class="mt-2">
-          <form action="{{route('searchingfoacoach')}}" method="post">
+          <form action="{{route('searchingfoapemilik')}}" method="post">
             <div class="input-group">
               @csrf
               @method('post')

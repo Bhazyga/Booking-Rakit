@@ -18,7 +18,7 @@
 
   @include('comp.userNav')
   @include('comp.sidbar')
-  @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
+  @if (Auth::user()->gender == '' )
   <script>
     window.location = "/dashboard";
   </script>

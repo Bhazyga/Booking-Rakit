@@ -23,7 +23,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have accepted the coach',
+      text: 'you have accepted the pemilik',
     })
   </script>
   @endif
@@ -34,7 +34,7 @@
     Swal.fire({
       icon: 'success',
       title: 'Good job!',
-      text: 'you have deleted the coach',
+      text: 'you have deleted the pemilik',
     })
   </script>
 
@@ -65,7 +65,7 @@
 
         </div>
         {{-- h1
-        {{-- h1 in green top coaches --}}
+        {{-- h1 in green top pemilikes --}}
         {{-- --}}
         <div class="mt-4">
           <table class="table align-middle mb-0 bg-white">

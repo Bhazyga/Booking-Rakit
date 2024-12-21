@@ -18,12 +18,11 @@
 
   @include('comp.userNav')
   @include('comp.sidbar')
-  @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
+  {{-- @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
   <script>
     window.location = "/dashboard";
-  </script>
+  </script> --}}
 
-  @endif
 
   <div id="page-content-wrapper">
     <div class="container mt-5  ">

@@ -18,12 +18,7 @@
 
     @include('comp.userNav')
     @include('comp.sidbar')
-    @if (Auth::user()->gender == '' || Auth::user()->quizstatus == '0' )
-    <script>
-        window.location = "/dashboard";
-    </script>
 
-    @endif
 
     <div id="page-content-wrapper">
         <div class="container mt-5  ">
@@ -71,13 +66,13 @@
                                 <div class="">
                                     <h3 class="mt-3">Course Details</h3>
                                     <p class="mt-3">Course Level: {{$data->level}}</p>
-                                    <p class="mt-3">Course Coach: <a href="/dashboard/coach/{{$userid->id}}">
+                                    <p class="mt-3">Course Pemilik: <a href="/dashboard/pemilik/{{$userid->id}}">
                                             {{$data->author}} </a></p>
                                 </div>
 
                                 <div>
                                     <a target="_blank" href="{{$data->link}}" class="btn btn-success btn-sm w-100"><i
-                                            class="bi bi-play-circle"></i> WATCH</a>
+                                            class="bi bi-play-circle"></i> Youtube</a>
                                 </div>
                             </div>
                         </div>
