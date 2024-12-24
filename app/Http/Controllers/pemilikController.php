@@ -21,7 +21,7 @@ class pemilikController extends Controller
     public function index()
     {
         $data = pemilik::all();
-        return view('user.pemilik', compact('data'));
+        return view('user.pemiliks', compact('data'));
         //
     }
 
@@ -67,49 +67,49 @@ class pemilikController extends Controller
 
     public function acceptBooking($id){
         $booking = booking::find($id);
-        $booking->status = 'accepted';
+        $booking->status = 'Di Terima';
         $booking->save();
         // send email to the user that his booking has been accepted
-        $details = [
-            'title' => 'Booking accepted',
-            'image' => 'https://thumbs.gfycat.com/ComfortableRealisticGuanaco-max-1mb.gif',
-            'button' => '0',
+        // $details = [
+        //     'title' => 'Booking accepted',
+        //     'image' => 'https://thumbs.gfycat.com/ComfortableRealisticGuanaco-max-1mb.gif',
+        //     'button' => '0',
 
-            'body' => 'Your booking has been accepted by the pemilik'
+        //     'body' => 'Your booking has been accepted by the pemilik'
 
-        ];
-        Mail::to($booking->email)->send(new \App\Mail\TestEmail($details));
+        // ];
+        // Mail::to($booking->email)->send(new \App\Mail\TestEmail($details));
 
-        return redirect()->back()->with('success', 'Booking accepted');
+        return redirect()->back()->with('success', 'Booking Di Terima');
     }
 
         public function rejectBooking($id){
         $booking = booking::find($id);
-        $booking->status = 'rejected';
+        $booking->status = 'Di Tolak';
         $booking->save();
         // send email to the user that his booking has been rejected
-        $details = [
-            'title' => 'Booking rejected',
-            'image' => 'https://media.tenor.com/YFhAP8U26GQAAAAM/rejected-stamp.gif',
-            'button' => '0',
+        // $details = [
+        //     'title' => 'Booking rejected',
+        //     'image' => 'https://media.tenor.com/YFhAP8U26GQAAAAM/rejected-stamp.gif',
+        //     'button' => '0',
 
-            'body' => 'Your booking has been rejected by the pemilik'
+        //     'body' => 'Your booking has been rejected by the pemilik'
 
-        ];
-        Mail::to($booking->email)->send(new \App\Mail\TestEmail($details));
+        // ];
+        // Mail::to($booking->email)->send(new \App\Mail\TestEmail($details));
 
-        return redirect()->back()->with('success', 'Booking rejected');
+        return redirect()->back()->with('success', 'Booking Di Tolak');
     }
 
     public function dashboard(){
         $data = pemilik::where('user_id', auth()->user()->id)->first();
         $bookings = booking::where('pemilik_id', $data->id)->get();
         // accepted bookings
-        $accepted = booking::where('pemilik_id', $data->id)->where('status', 'accepted')->get();
+        $accepted = booking::where('pemilik_id', $data->id)->where('status', 'Di Terima')->get();
         // pending bookings
         $pending = booking::where('pemilik_id', $data->id)->where('status', 'pending')->get();
         // rejected booking
-        $rejected = booking::where('pemilik_id', $data->id)->where('status', 'rejected')->get();
+        $rejected = booking::where('pemilik_id', $data->id)->where('status', 'Di Tolak')->get();
 
         return view('pemilik.dashboard', compact('data', 'bookings', 'accepted', 'pending', 'rejected'));
 

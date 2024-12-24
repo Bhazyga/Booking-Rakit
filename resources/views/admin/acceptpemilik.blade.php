@@ -68,10 +68,10 @@
           <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
               <tr>
-                <th>Name</th>
+                <th>Nama</th>
                 <th>Jenis</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -89,14 +89,14 @@
                 </td>
                 <td>
                   <p class="fw-normal mb-1">{{$item->jenis}}</p>
-                  <p class="text-muted mb-0">{{$item->yearsofexperience}} Years</p>
+                  <p class="text-muted mb-0">{{$item->yearsofexperience}} Tahun</p>
                 </td>
                 <td>
                   {{-- <button class="btn btn-sm btn-outline-success"><i class="bi bi-eye-fill"></i> Read</button> --}}
                   <!-- Button trigger modal -->
                   <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$item->id}}"
                     class="btn btn-sm btn-outline-success">
-                    <i class="bi bi-eye-fill"></i> Read
+                    <i class="bi bi-eye-fill"></i> Lihat
                   </button>
 
                   <!-- Modal -->
@@ -106,20 +106,20 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-clipboard-fill"></i>
-                            Description</h1>
+                            Deksripsi</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                           @csrf
                           <label for="sport">
 
-                            <h5 class="text-success">Description :</h5>
+                            <h5 class="text-success">Deskripsi :</h5>
                             <p class="text-muted">{{$item->description}} </p>
                           </label>
 
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                         </div>
                       </div>
                     </div>
@@ -131,14 +131,14 @@
                     @csrf
                     <input type="hidden" name="id" value="{{$item->id}}">
                     <button type="submit" class="btn  btn-sm btn-success ">
-                      <i class="bi bi-check-square"></i> Accept
+                      <i class="bi bi-check-square"></i> Terima
                     </button>
                   </form>
                   <form action="{{route('rejectpemilik')}}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{$item->id}}">
                     <button type="submit" class="btn  btn-sm btn-danger ">
-                      <i class="bi bi-x-square"></i> Reject
+                      <i class="bi bi-x-square"></i> Tolak
                     </button>
                 </td>
               </tr>

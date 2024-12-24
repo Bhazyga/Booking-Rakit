@@ -163,7 +163,7 @@
         <a href="{{route('profile.edit')}}"><i class="bi bi-person-circle"></i> Profil</a>
       </li>
       <li>
-        <a href="{{route('searchPemilik')}}"><i class="bi bi-people-fill"></i> Hubungi Pemilik Rakit</a>
+        <a href="{{route('searchPemiliks')}}"><i class="bi bi-people-fill"></i> Hubungi Pemilik Rakit</a>
       </li>
       <li>
         <a href="{{route('searchLomba')}}"><i class="bi bi-play-circle-fill"></i> Event Lomba</a>

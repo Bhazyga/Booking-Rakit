@@ -64,9 +64,9 @@
                                 </p>
                                 <hr>
                                 <div class="">
-                                    <h3 class="mt-3">Course Details</h3>
-                                    <p class="mt-3">Course Level: {{$data->level}}</p>
-                                    <p class="mt-3">Course Pemilik: <a href="/dashboard/pemilik/{{$userid->id}}">
+                                    <h3 class="mt-3">Detail Lomba atau Acara</h3>
+                                    <p class="mt-3">Kategori : {{$data->level}}</p>
+                                    <p class="mt-3">Link kegiatan: <a href="/dashboard/pemilik/{{$userid->id}}">
                                             {{$data->author}} </a></p>
                                 </div>
 
@@ -170,7 +170,7 @@
 
                 <div class="detailBox w-75 ms-5">
                     <div class="titleBox">
-                        <label>Comment Box</label>
+                        <label>Kolam Komentar</label>
                         {{-- <button type="button" class="close" aria-hidden="true">&times;</button> --}}
                     </div>
                     <div class="commentBox">
@@ -182,7 +182,7 @@
                                 {{-- if no comment --}}
                                 @if (count($comments) == 0)
                                 <li class="mb-2">
-                                    BE THE FIRST COMMENT 👇👇
+                                    Mari Berkomentar 👇👇
                                 </li>
                                 @endif
                                 {{-- if no comment --}}
@@ -243,10 +243,10 @@
                                     @method('POST')
                                     <div class="input-group">
                                         <input type="text" class="form-control rounded" name="comment"
-                                            placeholder="Example comment" />
+                                            placeholder="Komen disini" />
                                         <input type="hidden" name="course_id" value="{{$data->id}}">
                                         <button type="submit" class="btn btn-success"><i class="bi bi-pencil-fill"></i>
-                                            Add Comment</button>
+                                            Tambah Komentar</button>
                                     </div>
                                     <div class="form-group">
                                         {{-- <button class="btn btn-success">Add</button> --}}

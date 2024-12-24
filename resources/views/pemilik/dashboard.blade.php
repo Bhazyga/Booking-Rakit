@@ -141,10 +141,10 @@
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{route('accept', $item->id)}}" class="btn btn-success btn-sm me-2">
-                                            <i class="bi bi-calendar-check-fill"></i> Accept
+                                            <i class="bi bi-calendar-check-fill"></i> Terima
                                         </a>
                                         <a href="{{route('reject', $item->id)}}" class="btn btn-danger btn-sm">
-                                            <i class="bi bi-x-circle-fill"></i> Reject
+                                            <i class="bi bi-x-circle-fill"></i> Tolak
                                         </a>
                                     </div>
                                 </td>
@@ -156,10 +156,11 @@
 
 
                 <table class="table align-middle mb-0 bg-white">
-                    <h2>Booking Yang Di terima</h2>
+                    <h2>Riwayat Booking</h2>
                     <thead class="bg-light">
                         <tr>
                             <th>Nama</th>
+                            <th>No Hp</th>
                             <th>Tanggal</th>
                             <th>Waktu</th>
                             <th>Status</th>
@@ -168,20 +169,23 @@
                     </thead>
                     <tbody>
                         @foreach ($bookings as $booking)
+                        @if ($booking->status != 'pending')
                             <tr>
                                 <td>{{ $booking->name }}</td>
+                                <td>{{ $booking->phone }}</td>
                                 <td>{{ $booking->date }}</td>
                                 <td>{{ $booking->time }}</td>
                                 <td>{{ $booking->status }}</td>
                                 <td>
+                                    <a href="{{route('accept', $booking->id)}}" class="btn btn-success btn-sm me-2">
+                                        <i class="bi bi-calendar-check-fill"></i> Terima
+                                    </a>
                                 <a href="{{route('reject', $booking->id)}}" class="btn btn-danger btn-sm">
-                                    <i class="bi bi-x-circle-fill"></i> Reject
-                                </a>
-                                <a href="{{route('accept', $booking->id)}}" class="btn btn-success btn-sm me-2">
-                                    <i class="bi bi-calendar-check-fill"></i> Accept
+                                    <i class="bi bi-x-circle-fill"></i> Tolak
                                 </a>
                             </td>
                             </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

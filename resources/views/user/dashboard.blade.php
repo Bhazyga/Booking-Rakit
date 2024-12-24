@@ -80,8 +80,8 @@
                   <div class="card-footer d-flex">
 
                     <small class="text-muted">{{$item->price}} Rupiah</small>
-                    <a href="/dashboard/coach/{{$item->id}}" class="btn btn-success btn-sm ms-auto"><i
-                        class="bi bi-calendar2-check"></i> Book Now</a>
+                    <a href="/dashboard/pemilik/{{$item->id}}" class="btn btn-success btn-sm ms-auto"><i
+                        class="bi bi-calendar2-check"></i> Booking Sekarang</a>
 
                   </div>
                 </div>
@@ -122,7 +122,7 @@
 
                 <small class="text-muted"><i class="bi bi-pencil-square "></i> {{$item->author}} </small>
                 <a href="{{route('viewCourse',$item->id)}}" class="btn btn-success btn-sm ms-auto"><i
-                    class="bi bi-play-circle"></i> View Course</a>
+                    class="bi bi-play-circle"></i>Lihat Lomba</a>
 
               </div>
             </div>

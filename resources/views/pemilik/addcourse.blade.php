@@ -46,12 +46,12 @@
               @method('POST')
               <!-- Name input -->
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example1">Name</label>
+                <label class="form-label" for="form4Example1">Nama</label>
                 <input type="text" name="name" id="form4Example1" class="form-control" placeholder="Name Example" />
               </div>
               {{-- image input --}}
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example2">Image</label>
+                <label class="form-label" for="form4Example2">Gambar</label>
                 <input type="file" name="image" class="form-control">
 
               </div>
@@ -60,18 +60,18 @@
               <div class="form-outline mb-1">
                 <label class="form-label" for="form4Example2">Link</label>
                 <input type="text" name="link" id="form4Example2" class="form-control"
-                  placeholder="www.example.com/course" />
+                  placeholder="Bisa berbentuk link gform pendaftaran lomba" />
               </div>
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example2">Level</label>
-                <input type="text" name="level" id="form4Example2" class="form-control" placeholder="Hard / Easy" />
+                <label class="form-label" for="form4Example2">Kategori</label>
+                <input type="text" name="level" id="form4Example2" class="form-control" placeholder="Kategori" />
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example3">Description</label>
+                <label class="form-label" for="form4Example3">Deskripsi</label>
                 <textarea name="description" class="form-control"
-                  placeholder="Description example ,you can add up to 500 word here" id="form4Example3"
+                  placeholder="Masukan Tanggal Dan Deksripsi Agar User mengetahui detail event & lomba" id="form4Example3"
                   rows="12"></textarea>
               </div>
 

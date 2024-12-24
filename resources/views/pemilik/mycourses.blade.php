@@ -79,7 +79,7 @@
               <div class="col-lg-12">
                 <div class="d-flex justify-content-end">
                   <a href="{{route('addcourse')}}" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i>
-                    Add Course</a>
+                    Tambah Lomba Atau Acara </a>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
         </div>
 
         <div class="col-lg-12">
-          <h1 class="text-center">Courses</h1>
+          <h1 class="text-center">Lomba & Event</h1>
         </div>
 
         <div class="row">
@@ -104,9 +104,9 @@
               <thead class="bg-light">
                 <tr>
 
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th>Actions</th>
+                  <th>Gambar</th>
+                  <th>Nama</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>

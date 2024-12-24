@@ -60,7 +60,7 @@ Route::get('/dashboard/lomba', [CourseController::class , 'index'])->name('searc
 Route::get('/profile', [userInfo::class, 'edit'])->name('profile.edit');
 Route::patch('/profile', [userInfo::class, 'update'])->name('profile.update');
 Route::get('/dashboard/course', [CourseController::class, 'search'])->name('user.searchcourse');
-Route::get('/dashboard/pemilik',[pemilikController::class, 'index'])->name('searchPemilik');
+Route::get('/dashboard/pemiliks',[pemilikController::class, 'index'])->name('searchPemiliks');
 Route::get('/dashboard/pemilik/{id}',[pemilikController::class, 'show'])->name('showapemilik');
 Route::post('/dashboard/pemilik/book',[pemilikController::class, 'store'])->name('booking');
 Route::post('/dashboard/pemilik/search',[pemilikController::class, 'search'])->name('searchingfoapemilik');

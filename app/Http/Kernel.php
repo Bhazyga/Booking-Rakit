@@ -70,6 +70,6 @@ class Kernel extends HttpKernel
         'isUser' => Middleware\isUser::class,
         'isAdmin' => Middleware\isAdmin::class,
         'isPemilik' => Middleware\isPemilik::class,
-        'isQuizDone' => isQuizDone::class,
+        // 'isQuizDone' => isQuizDone::class,
     ];
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Booking Rakit - Pemilik</title>
+  <title>Booking Rakit - Music</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,13 +18,46 @@
 
   @include('comp.userNav')
   @include('comp.sidbar')
-  @if (Auth::user()->gender == '')
+
+  {{-- session is tru --}}
+  @if (session('alredy'))
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script>
-    window.location = "/dashboard";
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'this time is alredy booked',
+    })
   </script>
 
   @endif
+  @if (session('past'))
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'you can not book a session in the past',
+    })
+  </script>
+
+  @endif
+  {{-- session is tru --}}
+  @if (session('success'))
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    Swal.fire({
+      icon: 'success',
+      title: 'Good job!',
+      text: 'you have booked a session',
+    })
+  </script>
+  @endif
+
+  {{-- sweetalert --}}
   <div id="page-content-wrapper">
     <div class="container mt-5  ">
       <div class="row">
@@ -45,78 +78,154 @@
       <!-- /#page-content-wrapper -->
       <div class="row mb-4">
 
-        <div class="mt-2">
-          <form action="{{route('searchingfoapemilik')}}" method="post">
-            <div class="input-group">
-              @csrf
-              @method('post')
-              <input type="search" name="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon" />
-              <button type="submit" class="btn btn-outline-success">search</button>
-          </form>
-        </div>
-      </div>
-      {{-- h1 in green top coaches --}}
-      {{-- --}}
-      @if (count($data) > 0)
-      <div class="mt-4">
-
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          @foreach ($data as $item)
-
-          <div class="col ">
-            <div class="card ">
-
-              <a href="/dashboard/coach/{{$item->id}}">
-
-                <img src="{{URL::asset("images/$item->image")}}" class="card-img-top" alt="Skyscrapers"/>
-
-              </a>
-
+        @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        <div class="p-4 mb-3" style="background: white;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="/images/{{$data->image}}" class="card-img" alt="">
+            </div>
+            <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title mb-0">{{$item->name}}</h5>
-                <ul class="mb-0 mt-0 list-unstyled d-flex flex-row" style="color: #1B7B2C;">
-
-                  <p class="card-text text-muted">
-                    {{ $item->jenis }}
-                  </p>
+                <h5 class="card-title mb-4 mt-3">{{$data->name}}</h5>
+                <p class="card-text">{{$data->description}}</p>
+                <p class="card-text"><small class="text-muted"></small>{{$data->price}} Rupiah / 1 Jam</p>
               </div>
-              {{-- <div class="card-footer">
-                <small class="text-muted">Online 3 mins ago</small>
-              </div> --}}
-              <div class="card-footer text-success "> <a href="/dashboard/coach/{{$item->id}}"
-                  class="btn btn-success btn-rounded btn-block btn-sm w-100"><i class="bi bi-alarm"></i> BOOK NOW !</a>
-              </div>
-
             </div>
           </div>
-          @endforeach
+        </div>
 
-          @else
-          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      </div>
+    </div>
+    <div class="p-3" style="background: white;">
+      <form method="POST" action="{{route('booking')}}">
+        @csrf
 
-          <script>
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: ' No Coach Found!',
-            })
-          </script>
-
-          @endif
+        <div class="form-group">
+          <input type="hidden" name="pemilik_id" id="name" class="form-control" value="{{$data->id}}" required>
 
         </div>
-      </div>
+        <div class="form-group">
+          <input type="hidden" name="sport" id="name" class="form-control" value="{{$data->sport}}" required>
+
+        </div>
+
+        <div class="form-group">
+          <label for="date">Tanggal</label>
+          <input type="date" name="date" id="date" class="form-control @error('date') is-invalid @enderror"
+            value="{{ old('date') }}" required>
+          @error('date')
+          <div class="invalid-feedback">{{ $message }}</div>
+          @enderror
+        </div>
+
+        <div class="form-group">
+          <label for="time">Waktu</label>
+          <input type="time" name="time" id="time" class="form-control @error('time') is-invalid @enderror"
+            value="{{ old('time') }}" required>
+          @error('time')
+          <div class="invalid-feedback">{{ $message }}</div>
+          @enderror
+        </div>
+
+        <div class="form-group  mt-3">
+          <button type="submit" class="btn btn-success w-100">Booking Sekarang</button>
+        </div>
+      </form>
+    </div>
+    {{-- h1 in green top coaches --}}
+    {{-- --}}
+    <div class="w-100 bg-white mt-4">
 
     </div>
-    {{-- top top courses --}}
+    <div class="mt-4">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
 
-    <!-- /#wrapper -->
-    @include('comp.jq')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
+      </div>
+    </div>
+  </div>
+  {{-- <div class="col">
+          <div class="card h-100">
+            <img src="https://cdn.becomeopedia.com/wp-content/uploads/Sports-Coach.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+            <div class="card-body">
+              <h5 class="card-title">Nadia DARIM</h5>
+              <p class="card-text">I am a female coach with 4 years of experience , i love Baskete-ball <3 </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><i class="bi bi-check-all"></i> Online</small>
+            </div>
+          </div>
+        </div> --}}
+  {{-- <div class="col">
+          <div class="card h-100">
+            <img src="https://media.stack.com/stack-content/uploads/2020/02/11185812/Coach-Communication.jpg" class="card-img-top" alt="Palm Springs Road"/>
+            <div class="card-body">
+              <h5 class="card-title">Ahmad Yassin CHAFII</h5>
+              <p class="card-text">
+            I am a Foot-ball player & coach , i have 5 years of experience in the field of coaching.
+              </p>
+            </div> --}}
 
-</body>
+  </div>
+  </div>
+  </div>
+  </div>
 
-</html>
+  </div>
+  {{-- top top courses --}}
+  <div>
+    {{-- feedbacks --}}
+    <style>
+      .feedback-btn {
+        position: absolute;
+        position-attachment: fixed;
+        width: 45px;
+        height: 100px;
+        background: #025261;
+        top: 45%;
+        right: 0;
+        border-left: 2px solid #fff;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        box-shadow: 1px 1px 3px #000;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease-out;
+      }
+
+      .feedback-btn:hover {
+        width: 50px;
+      }
+
+      .feedback-txt {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        position: absolute;
+        right: -10px;
+        top: 22px;
+        color: #fff;
+        transition: 0.2s ease-out;
+      }
+
+      .feedback-btn:hover .feedback-txt {
+        right: -6px;
+      }
+    </style>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone={{$pemilikuser->phone}}">
+      <div class="feedback-btn">
+        <p class="feedback-txt mt-3">CONTACT </p>
+      </div>
+  </div>
+  </a>
+
+  {{-- sweet alert html costumize --}}
+
+  <!-- /#wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    < /> <
+    /body> <
+    /html>

@@ -72,9 +72,9 @@
             <thead class="bg-light">
               <tr>
                 <th>Name</th>
-                <th>author</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th>Pemilik</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>

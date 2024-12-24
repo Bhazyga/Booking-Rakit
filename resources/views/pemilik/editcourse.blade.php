@@ -47,12 +47,12 @@
               <input type="hidden" name="id" value="{{$data->id}}">
               <!-- Name input -->
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example1">Name</label>
+                <label class="form-label" for="form4Example1">Nama</label>
                 <input type="text" value="{{$data->name}}" name="name" id="form4Example1" class="form-control" />
               </div>
               {{-- image input --}}
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example2">Image</label>
+                <label class="form-label" for="form4Example2">Gambar</label>
                 <input type="file" name="image" class="form-control">
 
               </div>
@@ -63,20 +63,20 @@
                 <input type="text" value="{{$data->link}}" name="link" id="form4Example2" class="form-control" />
               </div>
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example2">Level</label>
+                <label class="form-label" for="form4Example2">Kategori</label>
                 <input type="text" name="level" value="{{$data->level}}" id="form4Example2" class="form-control" />
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-1">
-                <label class="form-label" for="form4Example3">Description</label>
+                <label class="form-label" for="form4Example3">Deskripsi</label>
                 <textarea name="description" class="form-control" id="form4Example3"
                   rows="12">{{$data->description}}</textarea>
               </div>
 
               <!-- Submit button -->
               <div class="mt-3 ">
-                <button type="submit" class="btn btn-outline-success btn-sm mb-4 w-100">Send</button>
+                <button type="submit" class="btn btn-outline-success btn-sm mb-4 w-100">Kirim</button>
               </div>
             </form>
           </div>

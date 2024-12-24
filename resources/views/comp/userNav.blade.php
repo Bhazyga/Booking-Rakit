@@ -13,7 +13,7 @@
           <a class="nav-link active text-white" aria-current="page" href="{{route('dashboard')}}">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{route('searchPemilik')}}">Hubungi Pemilik Rakit</a>
+          <a class="nav-link text-white" href="{{route('searchPemiliks')}}">Hubungi Pemilik Rakit</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{{route('searchLomba')}}">Event Lomba</a>
