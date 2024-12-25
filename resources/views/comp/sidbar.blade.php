@@ -166,7 +166,7 @@
         <a href="{{route('searchPemiliks')}}"><i class="bi bi-people-fill"></i> Hubungi Pemilik Rakit</a>
       </li>
       <li>
-        <a href="{{route('searchLomba')}}"><i class="bi bi-play-circle-fill"></i> Event Lomba</a>
+        <a href="{{route('lomba.index')}}"><i class="bi bi-play-circle-fill"></i> Event Lomba</a>
       </li>
       {{-- <li>
                 <a href="{{route('user.articles')}}"><i class="bi bi-body-text"></i> Articles</a>

@@ -37,7 +37,7 @@
 
           {{-- <h1>Welcome to Your Coaching Dashboard</h1>
 
-                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
+                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online lombas. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
         </div>
 
       </div>
@@ -45,7 +45,7 @@
       <div class="row mb-4">
 
         <div class="mt-2">
-          <form action="{{route('user.searchcourse')}}" method="get">
+          <form action="{{route('lomba.search')}}" method="get">
             <div class="input-group">
               @csrf
               @method('get')
@@ -66,7 +66,7 @@
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: ' No Courses Found!',
+              text: ' Lomba Kosong!',
             })
           </script>
 
@@ -84,7 +84,7 @@
               <div class="card-footer d-flex">
 
                 <small class="text-muted"><i class="bi bi-pencil-square "></i> {{$item->author}} </small>
-                <a href="{{route('viewCourse',$item->id)}}" class="btn btn-success btn-sm ms-auto">Lihat Lomba</a>
+                <a href="{{route('viewLomba',$item->id)}}" class="btn btn-success btn-sm ms-auto">Lihat Lomba</a>
 
               </div>
             </div>
@@ -98,7 +98,7 @@
   </div>
   @endif
   </div>
-  {{-- top top courses --}}
+  {{-- top top lombas --}}
 
   <!-- /#wrapper -->
   @include('comp.jq')

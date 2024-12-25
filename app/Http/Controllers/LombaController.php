@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Course;
+use App\Models\Lomba;
 use App\Models\comment;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class LombaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +17,15 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $data = Course::all();
-        return view('user.courses', compact('data'));
+        $data = Lomba::all();
+        return view('user.lombas', compact('data'));
     }
 
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $data = Course::where('name', 'like', '%'.$search.'%')->get();
-        return view('user.courses', compact('data'));
+        $data = Lomba::where('name', 'like', '%'.$search.'%')->get();
+        return view('user.lombas', compact('data'));
     }
 
     /**
@@ -54,28 +54,28 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\lomba  $lomba
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $data = Course::find($id);
+        $data = Lomba::find($id);
         $userid = User::find($data->user_id);
-        $comments = comment::where('course_id', $id)->get();
-        // return view('user.course', compact('data', 'comments'));
-        return view('user.course', compact('data', 'comments', 'userid'));
+        $comments = comment::where('lomba_id', $id)->get();
+        // return view('user.lomba', compact('data', 'comments'));
+        return view('user.lomba', compact('data', 'comments', 'userid'));
         //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\lomba  $lomba
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(lomba $lomba)
     {
-        
+
         //
     }
 
@@ -83,10 +83,10 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\lomba  $lomba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Lomba $lomba)
     {
         //
     }
@@ -94,13 +94,13 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Course  $course
+     * @param  \App\Models\lomba  $lomba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(lomba $lomba)
     {
-        
-        // destroy course ussing id by Coursee:destr
-        
+
+        // destroy Lomba ussing id by Lombae:destr
+
     }
 }

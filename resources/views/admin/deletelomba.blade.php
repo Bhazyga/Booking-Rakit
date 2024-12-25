@@ -120,7 +120,7 @@
                   </div>
                 </td>
                 <td>
-                  <a href="{{route('deleteCourse',$item->id)}}" class="btn btn-danger btn-sm"><i
+                  <a href="{{route('deleteLomba',$item->id)}}" class="btn btn-danger btn-sm"><i
                       class="bi bi-trash3-fill"></i> Delete</a>
                 </td>
               </tr>

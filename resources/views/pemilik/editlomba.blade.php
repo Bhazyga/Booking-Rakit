@@ -41,13 +41,14 @@
         <div class="mt-4">
           {{-- for of adding a course --}}
           <div class="formcontainer">
-            <form action="{{route('storecourse')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('updatelomba')}}" method="post" enctype="multipart/form-data">
               @csrf
-              @method('POST')
+              @method('post')
+              <input type="hidden" name="id" value="{{$data->id}}">
               <!-- Name input -->
               <div class="form-outline mb-1">
                 <label class="form-label" for="form4Example1">Nama</label>
-                <input type="text" name="name" id="form4Example1" class="form-control" placeholder="Name Example" />
+                <input type="text" value="{{$data->name}}" name="name" id="form4Example1" class="form-control" />
               </div>
               {{-- image input --}}
               <div class="form-outline mb-1">
@@ -59,25 +60,23 @@
               <!-- Email input -->
               <div class="form-outline mb-1">
                 <label class="form-label" for="form4Example2">Link</label>
-                <input type="text" name="link" id="form4Example2" class="form-control"
-                  placeholder="Bisa berbentuk link gform pendaftaran lomba" />
+                <input type="text" value="{{$data->link}}" name="link" id="form4Example2" class="form-control" />
               </div>
               <div class="form-outline mb-1">
                 <label class="form-label" for="form4Example2">Kategori</label>
-                <input type="text" name="level" id="form4Example2" class="form-control" placeholder="Kategori" />
+                <input type="text" name="level" value="{{$data->level}}" id="form4Example2" class="form-control" />
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-1">
                 <label class="form-label" for="form4Example3">Deskripsi</label>
-                <textarea name="description" class="form-control"
-                  placeholder="Masukan Tanggal Dan Deksripsi Agar User mengetahui detail event & lomba" id="form4Example3"
-                  rows="12"></textarea>
+                <textarea name="description" class="form-control" id="form4Example3"
+                  rows="12">{{$data->description}}</textarea>
               </div>
 
               <!-- Submit button -->
               <div class="mt-3 ">
-                <button type="submit" class="btn btn-outline-success btn-sm mb-4 w-100">Send</button>
+                <button type="submit" class="btn btn-outline-success btn-sm mb-4 w-100">Kirim</button>
               </div>
             </form>
           </div>

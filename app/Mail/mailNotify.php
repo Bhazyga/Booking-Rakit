@@ -29,6 +29,6 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('ISPORT - EMAIL')->view('email.accepted');
+        return $this->subject('Booking Rakit - EMAIL')->view('email.accepted');
     }
 }

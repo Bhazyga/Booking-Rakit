@@ -18,14 +18,14 @@
 
   @include('comp.coachnav')
   @include('comp.coachsidbar')
-  {{-- if session mycourses true --}}
+  {{-- if session mylombas true --}}
   @if(session('addedd'))
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
     Swal.fire(
-      'Good job!',
-      'Your course has been added successfully !',
+      'Kerja Bagus!',
+      'Lomba Telah Di tambahkan!',
       'success'
     )
   </script>
@@ -37,8 +37,8 @@
 
   <script>
     Swal.fire(
-      'Good job!',
-      'Your course has been deleted successfully !',
+      'Kerja Bagus!',
+      'Lomba telah di berhasil dihapus !',
       'success'
     )
   </script>
@@ -50,8 +50,8 @@
 
   <script>
     Swal.fire(
-      'Good job!',
-      'Your course has been updated successfully !',
+      'Kerja Bagus!',
+      'Lomba telah di berhasil diupdate !',
       'success'
     )
   </script>
@@ -72,13 +72,13 @@
 
           {{-- <h1>Welcome to Your Coaching Dashboard</h1>
 
-                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
+                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online lombas. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
           <div>
             {{-- button in the right side --}}
             <div class="row">
               <div class="col-lg-12">
                 <div class="d-flex justify-content-end">
-                  <a href="{{route('addcourse')}}" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i>
+                  <a href="{{route('addlomba')}}" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i>
                     Tambah Lomba Atau Acara </a>
                 </div>
               </div>
@@ -88,7 +88,7 @@
         </div>
         <!-- /#page-content-wrapper -->
         <div class="row mb-4">
-          {{-- add course btn in the left side --}}
+          {{-- add lomba btn in the left side --}}
 
         </div>
 
@@ -127,7 +127,7 @@
                   <td>
                     <div class="d-flex">
                       {{-- edit btn --}}
-                      <form action="{{route('editcourse')}}" method="post">
+                      <form action="{{route('editlomba')}}" method="post">
                         @csrf
                         @method('post')
                         <input type="hidden" name="id" value="{{$item->id}}">
@@ -136,7 +136,7 @@
                       </form>
                       <div>
                         {{-- delete btn --}}
-                        <form action="{{route('deletecourse',$item->id)}}" method="get">
+                        <form action="{{route('deletelomba',$item->id)}}" method="get">
                           @csrf
                           @method('get')
                           <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i>
@@ -152,9 +152,9 @@
           </div>
 
         </div>
-        {{-- table showin course image and name and actions --}}
+        {{-- table showin lomba image and name and actions --}}
 
-        {{-- top top courses --}}
+        {{-- top top lombas --}}
 
         <!-- /#wrapper -->
         @include('comp.jq')

@@ -52,8 +52,8 @@ class User extends Authenticatable
         return $this->hasMany(Article::class );
     }
 
-    public function Courses(){
-        return $this->hasMany(Course::class );
+    public function Lombas(){
+        return $this->hasMany(Lomba::class );
     }
 
     public function pemiliks(){

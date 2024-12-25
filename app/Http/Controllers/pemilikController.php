@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use App\Models\pemilik;
-use App\Models\Course;
+use App\Models\Lomba;
 use App\Mail\TestEmail;
 use App\Models\booking;
 use Illuminate\Http\Request;
@@ -148,8 +148,8 @@ class pemilikController extends Controller
         return redirect()->back()->with('success', 'Booking anda berhasil');
     }
 
-    public function addcourse(){
-        return view('pemilik.addcourse');
+    public function addlomba(){
+        return view('pemilik.addlomba');
     }
     public function search(Request $request){
         $inputs = $request->all();
@@ -208,13 +208,13 @@ class pemilikController extends Controller
         //
     }
 
-    public function mycourses(){
-        // find course where the user_id = auth user id
-        $data = Course::where('user_id', auth()->user()->id)->get();
-        return view('pemilik.mycourses', compact('data'));
+    public function mylombas(){
+        // find Lomba where the user_id = auth user id
+        $data = Lomba::where('user_id', auth()->user()->id)->get();
+        return view('pemilik.mylombas', compact('data'));
     }
 
-    public function addacourse(Request $request){
+    public function addalomba(Request $request){
         // validation
         $request->validate([
             'name' => 'required',
@@ -235,22 +235,22 @@ class pemilikController extends Controller
         $inputs['author'] = auth()->user()->name;
 
 
-        Course::create($inputs);
-        return redirect()->route('mycourses')->with('addedd', 'Course added');
+        Lomba::create($inputs);
+        return redirect()->route('mylombas')->with('addedd', 'lomba added');
     }
 
-    public function deletecourse($id){
-        $data = Course::find($id);
+    public function deletelomba($id){
+        $data = Lomba::find($id);
         $data->delete();
-        return redirect()->back()->with('deleted', 'Course deleted');
+        return redirect()->back()->with('deleted', 'lomba deleted');
     }
-    public function editcourse(request $request){
-        $data = Course::find($request->id);
-        return view('pemilik.editcourse', compact('data'));
+    public function editlomba(request $request){
+        $data = Lomba::find($request->id);
+        return view('pemilik.editlomba', compact('data'));
     }
-    public function updatecourse(Request $request){
+    public function updatelomba(Request $request){
         $inputs = $request->all();
-        $data = Course::find($request->id);
+        $data = Lomba::find($request->id);
         $data->name = $inputs['name'];
         $data->description = $inputs['description'];
         $data->level = $inputs['level'];
@@ -263,7 +263,7 @@ class pemilikController extends Controller
 
         }
         $data->save();
-        return redirect()->route('mycourses')->with('updated', 'Course updated');
+        return redirect()->route('mylombas')->with('updated', 'lomba updated');
     }
 }
 

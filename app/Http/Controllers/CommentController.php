@@ -40,7 +40,7 @@ class CommentController extends Controller
             'comment' => 'required',
         ]);
         // limit  5 comments on 1 day
-        $count = comment::where('user_id', auth()->user()->id)->where('course_id', $request->course_id)->whereDate('created_at', date('Y-m-d'))->count();
+        $count = comment::where('user_id', auth()->user()->id)->where('lomba_id', $request->lomba_id)->whereDate('created_at', date('Y-m-d'))->count();
         if($count >= 5){
             return back()->with('error', 'Tidak dapat komen lebih dari 5 kali per hari');
         }
@@ -48,7 +48,7 @@ class CommentController extends Controller
         $comment = new comment();
         $comment->comment = $request->comment;
         $comment->user_id = auth()->user()->id;
-        $comment->course_id = $request->course_id;
+        $comment->lomba_id = $request->lomba_id;
         $comment->image = auth()->user()->image;
         $comment->save();
         return back();

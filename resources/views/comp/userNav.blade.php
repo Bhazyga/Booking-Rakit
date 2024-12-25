@@ -16,7 +16,7 @@
           <a class="nav-link text-white" href="{{route('searchPemiliks')}}">Hubungi Pemilik Rakit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{route('searchLomba')}}">Event Lomba</a>
+          <a class="nav-link text-white" href="{{route('lomba.index')}}">Event Lomba</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="404">Support</a>

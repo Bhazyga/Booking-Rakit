@@ -160,7 +160,7 @@
         <a href="{{route('showpemilik')}}"><i class="bi bi-trash3-fill"></i> Hapus Pemilik</a>
       </li>
       <li>
-        <a href="{{route('showCourses')}}"><i class="bi bi-vector-pen"></i> Menu Perlombaan </a>
+        <a href="{{route('showLombas')}}"><i class="bi bi-vector-pen"></i> Menu Perlombaan </a>
       </li>
 
   </div>

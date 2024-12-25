@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\pemilik;
-use App\Models\Course;
+use App\Models\Lomba;
 use App\Mail\TestEmail;
 use Illuminate\Http\Request;
 use App\Models\demandbepemilik;
@@ -175,16 +175,16 @@ class adminController extends Controller
         return redirect()->back()->with('delete', 'pemilik deleted successfully');
     }
 
-    public function showCourses()
+    public function showLombas()
     {
-        $data = Course::orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.deletecourse', compact('data'));
+        $data = Lomba::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.deleteLomba', compact('data'));
     }
 
-    public function deleteCourse($id)
+    public function deleteLomba($id)
     {
-        $data = Course::find($id);
+        $data = Lomba::find($id);
         $data->delete();
-        return redirect()->back()->with('delete', 'Course deleted successfully');
+        return redirect()->back()->with('delete', 'Lomba deleted successfully');
     }
 }

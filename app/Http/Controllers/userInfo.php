@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Course;
+use App\Models\Lomba;
 use App\Models\pemilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,10 +22,10 @@ class userInfo extends Controller
         $user = User::find(Auth::user()->id);
         // all pemiliks but only last 3
         $pemiliks = pemilik::all()->take(3);
-        // all courses but only last 3
-        $courses = Course::all()->take(3);
+        // all lombas but only last 3
+        $lombas = Lomba::all()->take(3);
         // return
-        return view('user.dashboard', compact('user', 'pemiliks', 'courses'));
+        return view('user.dashboard', compact('user', 'pemiliks', 'lombas'));
 
 
 

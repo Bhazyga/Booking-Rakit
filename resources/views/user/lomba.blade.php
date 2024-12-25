@@ -33,7 +33,7 @@
 
                     {{-- <h1>Welcome to Your Coaching Dashboard</h1>
 
-                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online courses. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
+                <p>From here, you can manage your coaching schedule, review your progress, and book new coaching sessions or online lombas. Use the menu on the left to access different parts of your dashboard, or click on the quick links to jump to specific actions. We hope you find our platform helpful in achieving your sports goals, and we look forward to seeing your progress!</p> --}}
                 </div>
 
             </div>
@@ -47,7 +47,7 @@
             {{-- h1 in green top coaches --}}
             {{-- --}}
             <div class="">
-                {{-- course page using data --}}
+                {{-- lomba page using data --}}
 
                 {{-- centering the image --}}
                 {{-- make image small as thubmnail --}}
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </center>
-                {{-- course image --}}
+                {{-- lomba image --}}
 
                 {{-- showing comments --}}
                 {{-- showing comments --}}
@@ -244,7 +244,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control rounded" name="comment"
                                             placeholder="Komen disini" />
-                                        <input type="hidden" name="course_id" value="{{$data->id}}">
+                                        <input type="hidden" name="lomba_id" value="{{$data->id}}">
                                         <button type="submit" class="btn btn-success"><i class="bi bi-pencil-fill"></i>
                                             Tambah Komentar</button>
                                     </div>
@@ -254,7 +254,7 @@
                                 </form>
                         </div>
                     </div>
-                    {{-- top top courses --}}
+                    {{-- top top lombas --}}
 
                     <!-- /#wrapper -->
                     @include('comp.jq')

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('comment');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('lomba_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('lomba_id')->references('id')->on('lombas')->onDelete('cascade');
             $table->timestamps();
         });
     }

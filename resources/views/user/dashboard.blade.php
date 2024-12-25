@@ -100,15 +100,15 @@
     </div>
     <div class="row">
       {{-- h1 in green top coaches --}}
-      {{-- if theres no course --}}
-      @if (count($courses) == 0)
+      {{-- if theres no lomba --}}
+      @if (count($lombas) == 0)
 
       @else
 
       <div class="col-12">
-        <h1 class="text-dark">Top Courses <i class="bi bi-chat-square-heart"></i></h1>
+        <h1 class="text-dark">Event Terbaru <i class="bi bi-chat-square-heart"></i></h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          @foreach ($courses as $item)
+          @foreach ($lombas as $item)
           <div class="col">
             <div class="card">
               <img src="images/{{$item->image}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
@@ -121,7 +121,7 @@
               <div class="card-footer d-flex">
 
                 <small class="text-muted"><i class="bi bi-pencil-square "></i> {{$item->author}} </small>
-                <a href="{{route('viewCourse',$item->id)}}" class="btn btn-success btn-sm ms-auto"><i
+                <a href="{{route('viewLomba',$item->id)}}" class="btn btn-success btn-sm ms-auto"><i
                     class="bi bi-play-circle"></i>Lihat Lomba</a>
 
               </div>
@@ -131,7 +131,7 @@
           @endif
 
         </div>
-        {{-- top top courses --}}
+        {{-- top top lombas --}}
 
         <!-- /#wrapper -->
         @include('comp.jq')
